@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show All Employees</title>
+</head>
+<body>
+<table border="2px" style="padding: 2px">
+
+<tr style="padding: 2px">
+<th>Emp_ID</th>
+<th>Emp_Name</th>
+<th>Emp_Dept</th>
+<th>Emp_Salary</th>
+</tr>
+
+<tr th:if="emps==null">
+<td colspan="4"> <center>NO Record Found</center> </td>
+</tr>
+
+<tr th:each="emp : ${emps}">
+<td th:text="${emp.eno}"/>
+<td th:text="${emp.name}"/>
+<td th:text="${emp.dept}"/>
+<td th:text="${emp.sal}"/>
+</tr>
+
+</table>
+
+</body>
+</html>
